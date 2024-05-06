@@ -33,8 +33,6 @@ public class CustomerServiceImpl {
     public void addCustomer(CustomerDto customerDto){
       try {
           CustomerEntity customerEntity = ICustomerMapper.INSTANCE.toFromCustomerDto(customerDto);
-          //System.out.println(customerDto);
-          //System.out.println(customerEntity);
           customerRepository.save(customerEntity);
       }catch (Exception e){
           logger.error(e.getMessage(), e);
